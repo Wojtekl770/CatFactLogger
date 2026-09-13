@@ -17,7 +17,7 @@ namespace CatFactLogger.Repositories
 
         public async Task AppendAsync(CatFact fact, CancellationToken ct = default)
         {
-            var line = $"{DateTime.UtcNow:O} | {fact.Fact} | length={fact.Length}";
+            var line = $"{DateTime.UtcNow:yyyy-MM-dd HH:mm:ss} | {fact.Fact} | length={fact.Length}";
             await _writeLock.WaitAsync(ct);
             try
             {
