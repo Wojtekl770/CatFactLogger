@@ -1,0 +1,6 @@
+@CatFactLogger_HostAddress = http://localhost:5064
+
+GET {{CatFactLogger_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
