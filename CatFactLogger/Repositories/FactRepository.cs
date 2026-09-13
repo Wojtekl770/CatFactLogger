@@ -5,13 +5,13 @@ namespace CatFactLogger.Repositories
 {
     public sealed class FactRepository : IFactRepository
     {
-        private const string _filePath = "facts.txt";
-
+        private readonly string _filePath;
         private readonly ILogger<FactRepository> _logger;
         private readonly SemaphoreSlim _writeLock = new(1, 1);
 
-        public FactRepository(ILogger<FactRepository> logger)
+        public FactRepository(string filePath, ILogger<FactRepository> logger)
         {
+            _filePath = filePath;
             _logger = logger;
         }
 

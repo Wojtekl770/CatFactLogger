@@ -18,9 +18,10 @@ namespace CatFactLogger
 
             builder.Services.AddHttpClient<IFactService, FactService>(client =>
             {
-                client.BaseAddress = new Uri("https://catfact.ninja/fact");
+                client.BaseAddress = new Uri("https://catfact.ninja/");
             });
-            builder.Services.AddSingleton<IFactRepository, FactRepository>();
+            builder.Services.AddSingleton<IFactRepository>(sp =>
+                new FactRepository("facts.txt", sp.GetRequiredService<ILogger<FactRepository>>()));
 
             var app = builder.Build();
 
