@@ -1,6 +1,9 @@
-﻿namespace CatFactLogger.Repositories.Interfaces
+﻿using CatFactLogger.Shared.Data;
+
+namespace CatFactLogger.Repositories.Interfaces
 {
-    public class IFactRepository
+    public interface IFactRepository
     {
+        Task AppendAsync(CatFact fact, CancellationToken ct = default);
     }
 }

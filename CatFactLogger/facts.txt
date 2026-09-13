@@ -1,0 +1,3 @@
+2026-09-13T14:11:09.6467712Z | Cats have been domesticated for half as long as dogs have been. | length=63
+2026-09-13T14:11:53.3655923Z | In multi-cat households, cats of the opposite sex usually get along better. | length=75
+2026-09-13T14:12:18.4211656Z | The Maine Coon cat is America's only natural breed of domestic feline. It is 4 to 5 times larger than the Singapura, the smallest breed of cat. | length=143
