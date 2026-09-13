@@ -4,6 +4,7 @@ using CatFactLogger.Repositories.Interfaces;
 using CatFactLogger.Services;
 using CatFactLogger.Shared.Data;
 using Microsoft.Extensions.Logging;
+using System.Text.Json;
 using Moq;
 using Xunit;
 
@@ -50,7 +51,8 @@ public class FactServiceTests
 
         var sut = new FactService(httpClient, repositoryMock.Object, loggerMock.Object);
 
-        await Assert.ThrowsAsync<InvalidOperationException>(() => sut.FetchAndSaveAsync());
+        await Assert.ThrowsAsync<JsonException>(
+            () => sut.FetchAndSaveAsync());
         repositoryMock.Verify(r => r.AppendAsync(It.IsAny<CatFact>(), It.IsAny<CancellationToken>()), Times.Never);
     }
 }
