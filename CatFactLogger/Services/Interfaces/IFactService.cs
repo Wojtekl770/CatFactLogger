@@ -1,6 +1,9 @@
-﻿namespace CatFactLogger.Services.Interfaces
+﻿using CatFactLogger.Shared.Data;
+
+namespace CatFactLogger.Services.Interfaces
 {
-    public class IFactService
+    public interface IFactService
     {
+        Task<CatFact?> GetRandomFactAsync(CancellationToken ct = default);
     }
 }
