@@ -2,8 +2,6 @@
 
 A small ASP.NET Core Web API that fetches random cat facts from [catfact.ninja](https://catfact.ninja/fact) and logs each one to a local text file.
 
-Built as a technical assignment for the Netwise .NET internship program (Szkółka .NET).
-
 ## What it does
 
 Every call to `POST /api/Fact`:
